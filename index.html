@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+             <p id="alli" class="escondido"></p>
+
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["HOLA 🩸","HOLA 🫀","HOLA 🧠","HOLA 🫁"],
+                  nombre: "Mi nombre es Cony",
+                motivo: "TEstoy cursando este ramo para aprender a utilizar y sacar prevecho de las herramientas de programación. El acercamiento a el funcionamiento me ha permitido comprender las soluciones desde la escritura. me presenté a rendir la EVALUACIÓN N°1 porque creí entender cómo utilizar las herramientas. Sigo aprendiendo nuevas <span>herramientas…</span>",
+                etc: "Ya revisé mi primera nota y la verdad es <span>que</span>",
+                etc2: "ta bien.",
+            };
+              
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+            console.log(aleatorio);
+            
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            $("#alli").html(texto.etc2);
+            
+            function reveladors() {
+                if ($("#alla").hasClass("escondido")) {
+                    $("#alla").removeClass("escondido"); // Reveal #alla
+                } else if ($("#alli").hasClass("escondido")) {
+                    $("#alli").removeClass("escondido"); // Reveal #alli when #alla is clicked again
+                }
+            }
+            
+
+            $("span").on("click", reveladors); // Attach the event handler directly to the spans        </script>
+    </body>
+</html>
