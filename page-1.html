@@ -25,15 +25,15 @@
             <h1>Selecciona</h1>
             <select style="padding:0.5rem">
                 <option>todos</option>
-                <option value=>gatitos</option>
+                <option>gatitos</option>
                 <option>otros</option>
             </select>
 
-            <div class="unos">Soy de los unos</div>
+            <div class="gatitos">Miau</div>
             <div class="otros">Soy de los otros</div>
-            <div class="unos">Soy de los unos</div>
+            <div class="gatitos">Miau</div>
             <div class="otros">Soy de los otros</div>
-            <div class="unos">Soy de los unos</div>
+            <div class="gatitos">Miau</div>
             <div class="otros">Soy de los otros</div>            
         </main>
 
@@ -41,14 +41,14 @@
         <script>
             $("select").change(function () {
                 valor = $("select").val();
-                if (valor == "unos") {
-                    $(".unos").show();
+                if (valor == "gatitos") {
+                    $(".gatitos").show();
                     $(".otros").hide();
                 } else if (valor == "otros"){
-                    $(".unos").hide();
+                    $(".gatitos").hide();
                     $(".otros").show();
                 } else {
-                    $(".unos").show();
+                    $(".gatitos").show();
                     $(".otros").show();
                 } // con jQuery es que el navegador puede entender las barbaridades que le estamos pidiendo
             });          
